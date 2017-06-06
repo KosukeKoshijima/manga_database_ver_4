@@ -25,4 +25,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+         has_many :mangas, :dependent => :destroy
+         has_many :likes, :dependent => :destroy
+         has_many :comments, :dependent => :destroy
+         has_many :liked_mangas, :through => :likes, :source => :manga
+         validates :username, :uniqueness => true
+
+
+
+
 end
