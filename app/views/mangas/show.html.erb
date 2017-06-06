@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h3>Manga #<%= @manga.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @manga.user_id %></dd>
+
+      <dt>Image</dt>
+      <dd><%= @manga.image %></dd>
+
+      <dt>Year</dt>
+      <dd><%= @manga.year %></dd>
+
+      <dt>Author</dt>
+      <dd><%= @manga.author %></dd>
+
+      <dt>Character</dt>
+      <dd><%= @manga.character %></dd>
+
+      <dt>Magazine</dt>
+      <dd><%= @manga.magazine %></dd>
+
+      <dt>Title</dt>
+      <dd><%= @manga.title %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/mangas" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/mangas/<%= @manga.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_manga/<%= @manga.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

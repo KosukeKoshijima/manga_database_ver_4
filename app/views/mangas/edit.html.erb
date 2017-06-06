@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @manga.errors.any? %>
+  <% @manga.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Manga #<%= @manga.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_manga/<%= @manga.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @manga.user_id %>">
+      </div>
+
+      <!-- Label and input for image -->
+      <div class="form-group">
+        <label for="image" class="control-label">
+          Image
+        </label>
+
+        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @manga.image %>">
+      </div>
+
+      <!-- Label and input for year -->
+      <div class="form-group">
+        <label for="year" class="control-label">
+          Year
+        </label>
+
+        <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="<%= @manga.year %>">
+      </div>
+
+      <!-- Label and input for author -->
+      <div class="form-group">
+        <label for="author" class="control-label">
+          Author
+        </label>
+
+        <input type="text" id="author" name="author" placeholder="Author" class="form-control" value="<%= @manga.author %>">
+      </div>
+
+      <!-- Label and input for character -->
+      <div class="form-group">
+        <label for="character" class="control-label">
+          Character
+        </label>
+
+        <input type="text" id="character" name="character" placeholder="Character" class="form-control" value="<%= @manga.character %>">
+      </div>
+
+      <!-- Label and input for magazine -->
+      <div class="form-group">
+        <label for="magazine" class="control-label">
+          Magazine
+        </label>
+
+        <input type="text" id="magazine" name="magazine" placeholder="Magazine" class="form-control" value="<%= @manga.magazine %>">
+      </div>
+
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @manga.title %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Manga
+      </button>
+      or
+      <a href="/mangas/<%= @manga.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
