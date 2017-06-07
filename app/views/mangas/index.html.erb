@@ -9,11 +9,9 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-
-        <th>User</th>
         <th>Title</th>
         <th>Image</th>
-        <th>Year</th>
+        <th>Initial release</th>
         <th>Author</th>
         <th>Character</th>
         <th>Magazine</th>
@@ -23,10 +21,8 @@
 
       <% @mangas.each do |manga| %>
       <tr>
-
-        <td><%= manga.user_id %></td>
         <td><%= manga.title %></td>
-        <td><%= manga.image %></td>
+        <td>  <a href="/mangas/<%= manga.id %>"><img src="<%= manga.image %>">></td>
         <td><%= manga.year %></td>
         <td><%= manga.author %></td>
         <td><%= manga.character %></td>

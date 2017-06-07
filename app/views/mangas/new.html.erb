@@ -20,11 +20,8 @@
 
       <!-- Label and input for user_id -->
       <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @manga.user_id %>">
+        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
       </div>
 
       <div class="form-group">
@@ -41,13 +38,13 @@
           Image
         </label>
 
-        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @manga.image %>">
+        <input type="text" id="image" name="image" placeholder="Image url" class="form-control" value="<%= @manga.image %>">
       </div>
 
       <!-- Label and input for year -->
       <div class="form-group">
         <label for="year" class="control-label">
-          Year
+          Initial release
         </label>
 
         <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="<%= @manga.year %>">

@@ -24,7 +24,7 @@
           User
         </label>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @comment.user_id %>">
+        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id  %>">
       </div>
 
       <!-- Label and input for manga_id -->
@@ -39,10 +39,10 @@
       <!-- Label and input for body -->
       <div class="form-group">
         <label for="body" class="control-label">
-          Body
+          Comment
         </label>
 
-        <textarea id="body" name="body" placeholder="Body" class="form-control" rows="3"><%= @comment.body %></textarea>
+        <textarea id="body" name="body" placeholder="Comment" class="form-control" rows="3"><%= @comment.body %></textarea>
       </div>
 
       <button class="btn btn-success">
