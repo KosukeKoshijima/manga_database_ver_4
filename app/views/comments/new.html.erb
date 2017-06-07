@@ -20,9 +20,6 @@
 
       <!-- Label and input for user_id -->
       <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
 
         <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id  %>">
       </div>
@@ -33,8 +30,12 @@
           Manga
         </label>
 
-        <input type="text" id="manga_id" name="manga_id" placeholder="Manga" class="form-control" value="<%= @comment.manga_id %>">
-      </div>
+
+
+      <%= select_tag(:manga_id,
+              options_from_collection_for_select(Manga.all, :id, :title, @manga_id),
+              :class => "form-control") %>
+
 
       <!-- Label and input for body -->
       <div class="form-group">

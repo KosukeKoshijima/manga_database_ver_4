@@ -30,7 +30,10 @@
           Manga
         </label>
 
-        <input type="text" id="manga_id" name="manga_id" placeholder="Manga" class="form-control" value="<%= @like.manga_id %>">
+        <%= select_tag(:manga_id,
+                options_from_collection_for_select(Manga.all, :id, :title, @manga_id),
+                :class => "form-control") %>
+
       </div>
 
       <button class="btn btn-success">
